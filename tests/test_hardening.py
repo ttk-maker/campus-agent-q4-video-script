@@ -6,7 +6,7 @@ import unittest
 from tests import test_script as base
 from src.agent import Agent
 from src.domain import number, digest
-from src.engine import Engine, check
+from src.engine import Engine, check, catalog_duration_bound
 from src.models import MockModel, ModelError
 from src.store import StateError
 from src.scenarios import draft
@@ -88,7 +88,8 @@ class HardeningTests(unittest.TestCase):
         from src.models import HTTPModel
         from src.transport import HTTPTransport
         self.payload['request']['target_seconds']=1
-        self.run_agent()
+        result=self.run_agent()
+        self.assertIn('minimum_fact_duration_exceeds_target',[r['code'] for r in result['risks']])
         snapshot=self.engine().view()
         model=HTTPModel.__new__(HTTPModel)
         with patch.object(HTTPTransport,'decide',return_value=base.action('finish',outcome='cannot_satisfy')) as decide:
@@ -96,3 +97,15 @@ class HardeningTests(unittest.TestCase):
         actual=decide.call_args.args[0]['snapshot']['duration_check']
         self.assertEqual(actual['scenes'][0]['voice_seconds'],1.5)
         self.assertGreater(actual['scenes'][0]['voice_seconds'],actual['target_seconds'])
+        self.assertEqual(model.allowed_tools,['finish'])
+        self.assertTrue(actual['catalog_bound']['proven_impossible'])
+
+    def test_duration_bound_checks_all_facts_and_does_not_claim_feasibility(self):
+        self.payload['request']['target_seconds']=1
+        c=self.payload['catalog'];r=self.payload['request']
+        self.assertTrue(catalog_duration_bound(r,c)['proven_impossible'])
+        c['materials'].append({'id':'P02','facts':[{'id':'F02','text':'好'}]})
+        bound=catalog_duration_bound(r,c)
+        self.assertFalse(bound['proven_impossible']);self.assertEqual(bound['minimum_seconds'],.8)
+        c['materials']=[]
+        self.assertFalse(catalog_duration_bound(r,c)['proven_impossible'])

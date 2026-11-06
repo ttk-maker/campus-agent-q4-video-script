@@ -5,14 +5,27 @@ import re
 
 from .domain import digest, normalize, fact_normalize, number, validate_script
 
-CHECK_POLICY = 'grounding-v2-boundaries-duration-v1'
+CHECK_POLICY = 'grounding-v2-boundaries-duration-v2'
+
+def speech_seconds(text,rate):
+    return (Decimal(len(normalize(text)))/rate+Decimal('0.5')).quantize(Decimal('0.1'),rounding=ROUND_CEILING)
+
+def catalog_duration_bound(request,catalog):
+    """A lower bound, not a promise of feasibility: at least one exact fact is required."""
+    rate=Decimal(str(catalog['rules']['styles'].get(request['style'],3)))
+    facts=[(speech_seconds(f['text'],rate),m['id'],f['id']) for m in catalog['materials'] for f in m['facts']]
+    if not facts:return {'proven_impossible':False,'minimum_seconds':None,'reason':'no_facts_to_bound'}
+    seconds,source,fact=min(facts)
+    return {'proven_impossible':seconds>number(request['target_seconds'],1,600),
+            'minimum_seconds':float(seconds),'source_id':source,'fact_id':fact,
+            'reason':'Every valid script needs at least one complete source fact. Holds cannot shorten speech.'}
 
 def estimate(script, request, rules):
     rate=Decimal(str(rules["styles"].get(request["style"],3)))
     rows=[];elapsed=Decimal(0);transition=Decimal(str(rules["transition_seconds"]))
     for index,scene in enumerate(script["scenes"],1):
         units=len(normalize(scene["voiceover"]))
-        speech=(Decimal(units)/rate+Decimal("0.5")).quantize(Decimal("0.1"),rounding=ROUND_CEILING)
+        speech=speech_seconds(scene['voiceover'],rate)
         seconds=max(number(scene["seconds"]),speech)
         start=elapsed;elapsed+=seconds
         rows.append({"scene":index,"source_id":scene["source_id"],"fact_id":scene["fact_id"],
@@ -114,6 +127,7 @@ class Engine:
                             if not s["catalog"]["materials"] else "Try a different shorter product feature query or finish needs_information; never invent sources.") if not found else None}
         elif tool=="estimate_duration":
             result={"status":"checked",**estimate(s["script"],s["request"],s["catalog"]["rules"]),"revision":s["revision"],"key":self.check_key(s)}
+            result['catalog_bound']=catalog_duration_bound(s['request'],s['catalog'])
             s["duration_check"]=result
         else:
             result={"status":"checked",**check(s["script"],s["request"],s["catalog"],s["retrieved"]),"revision":s["revision"],"key":self.check_key(s)}
@@ -125,6 +139,10 @@ class Engine:
         s=self.store.get(self.request_id);ready=self.ready(s)
         risks=deepcopy(s["rules_check"]["risks"]) if s["rules_check"] else [{"code":"rules_unchecked","detail":"Current script has not passed a current rule check."}]
         if s["duration_check"] and not s["duration_check"]["passed"]:risks.append({"code":"over_duration","over_seconds":s["duration_check"]["over_seconds"]})
+        bound=(s['duration_check'] or {}).get('catalog_bound',{})
+        if bound.get('proven_impossible'):
+            risks.append({'code':'minimum_fact_duration_exceeds_target',
+                          'detail':f"当前资料中最短完整事实的旁白也需约 {bound['minimum_seconds']} 秒，超过目标 {s['request']['target_seconds']} 秒；请补充更短的事实或调整目标时长。"})
         return {"request_id":self.request_id,"status":status,"reason":reason,"script_status":"ready" if ready else "unverified",
                 "script":s["script"],"revision":s["revision"],"estimated_total_seconds":s["duration_check"]["total_seconds"] if s["duration_check"] else None,
                 "duration_check":s["duration_check"],"rules_check":s["rules_check"],"risks":risks,
