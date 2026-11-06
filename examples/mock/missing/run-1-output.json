@@ -1,0 +1,30 @@
+{
+  "request_id": "missing-ee715c29f06c",
+  "status": "needs_information",
+  "reason": "missing_required_inputs",
+  "script_status": "unverified",
+  "script": null,
+  "revision": 0,
+  "estimated_total_seconds": null,
+  "duration_check": null,
+  "rules_check": null,
+  "risks": [
+    {
+      "code": "rules_unchecked",
+      "detail": "Current script has not passed a current rule check."
+    }
+  ],
+  "source_ids": [],
+  "retrieved_sources": [],
+  "revision_history": [],
+  "tool_events": [],
+  "missing": [
+    "audience",
+    "target_seconds"
+  ],
+  "published": false,
+  "mode": "mock",
+  "model": "offline-grounded-policy-v1",
+  "steps_used": 0,
+  "max_steps": 16
+}

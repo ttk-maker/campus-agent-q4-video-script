@@ -1,0 +1,42 @@
+{
+  "request_id": "no_materials-9af02973c2cb",
+  "status": "needs_information",
+  "reason": "no_matching_materials",
+  "script_status": "unverified",
+  "script": null,
+  "revision": 0,
+  "estimated_total_seconds": null,
+  "duration_check": null,
+  "rules_check": null,
+  "risks": [
+    {
+      "code": "rules_unchecked",
+      "detail": "Current script has not passed a current rule check."
+    }
+  ],
+  "source_ids": [],
+  "retrieved_sources": [],
+  "revision_history": [],
+  "tool_events": [
+    {
+      "tool": "search_materials",
+      "status": "empty",
+      "revision": 0,
+      "passed": null,
+      "attempt": 1
+    },
+    {
+      "tool": "search_materials",
+      "status": "empty",
+      "revision": 0,
+      "passed": null,
+      "attempt": 2
+    }
+  ],
+  "missing": [],
+  "published": false,
+  "mode": "mock",
+  "model": "offline-grounded-policy-v1",
+  "steps_used": 3,
+  "max_steps": 16
+}

@@ -1,0 +1,5 @@
+{
+  "status": "developer_interrupted",
+  "reason": "Repeated unchanged estimation observed; stopped diagnostic run to fix stage action exposure. No ready result claimed.",
+  "steps_recorded": 8
+}

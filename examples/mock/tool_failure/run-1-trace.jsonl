@@ -1,0 +1,2 @@
+{"step": 1, "action": {"tool": "search_materials", "arguments": {"query": "视频助手字幕功能"}, "reason": "Use actual source and check state."}, "observation": {"tool": "search_materials", "status": "failed", "error": "injected_tool_failure", "attempt": 1}, "next_action": "finish"}
+{"step": 2, "action": {"tool": "finish", "arguments": {"outcome": "failed"}, "reason": "Persist partial result for later continuation."}, "observation": {"status": "finished", "outcome": "failed"}, "next_action": "stop:failed"}

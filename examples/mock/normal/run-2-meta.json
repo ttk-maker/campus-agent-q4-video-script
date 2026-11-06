@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-11-06T09:24:26.606730+00:00",
+  "seconds": 0.01,
+  "mode": "mock",
+  "model": "offline-grounded-policy-v1"
+}

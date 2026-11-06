@@ -73,7 +73,7 @@ class Engine:
         schemas={"search_materials":{"query"},"submit_script":{"title","scenes"},"estimate_duration":set(),"check_rules":set()}
         if not isinstance(tool,str) or tool not in schemas or set(args)!=schemas[tool]:
             return {"status":"rejected","error":"invalid_tool_or_arguments","expected_keys":sorted(schemas.get(tool,set())) if isinstance(tool,str) else []}
-        if tool=="search_materials" and (not isinstance(args["query"],str) or not 1<=len(args["query"].strip())<=200):
+        if tool=="search_materials" and (not isinstance(args["query"],str) or not 1<=len(args["query"].strip())<=200 or not normalize(args["query"])):
             return {"status":"rejected","error":"query_must_be_nonempty_1_to_200_chars"}
         if tool=="submit_script":
             try:validate_script(args)

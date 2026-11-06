@@ -1,0 +1,260 @@
+{
+  "timestamp": "2026-11-06T09:45:40.329482+00:00",
+  "count": 63,
+  "passed": true,
+  "failures": [],
+  "tests": [
+    {
+      "test": "test_edges.EdgeTests.test_catalog_bad_rules_rejected",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_edges.EdgeTests.test_changed_script_without_new_hash_never_ready",
+      "seconds": 0.094
+    },
+    {
+      "test": "test_edges.EdgeTests.test_cross_process_failure_resume",
+      "seconds": 0.656
+    },
+    {
+      "test": "test_edges.EdgeTests.test_empty_inventory_distinct_from_unmatched_query",
+      "seconds": 0.031
+    },
+    {
+      "test": "test_edges.EdgeTests.test_expired_lease_recovers_and_stale_owner_cannot_write",
+      "seconds": 0.031
+    },
+    {
+      "test": "test_edges.EdgeTests.test_failed_recheck_clears_old_pass",
+      "seconds": 0.047
+    },
+    {
+      "test": "test_edges.EdgeTests.test_hidden_extra_subtitle_field_rejected",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_edges.EdgeTests.test_malformed_model_reply_sanitized",
+      "seconds": 0.016
+    },
+    {
+      "test": "test_edges.EdgeTests.test_multiple_sources_align_with_scene_checks",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_edges.EdgeTests.test_negation_and_extra_unmeasured_benefit_rejected",
+      "seconds": 0.015
+    },
+    {
+      "test": "test_edges.EdgeTests.test_no_semantic_claims_from_citation_only",
+      "seconds": 0.094
+    },
+    {
+      "test": "test_edges.EdgeTests.test_numeric_punctuation_cannot_change_claim",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_edges.EdgeTests.test_punctuation_query_cannot_match_entire_library",
+      "seconds": 0.016
+    },
+    {
+      "test": "test_edges.EdgeTests.test_remote_http_rejected",
+      "seconds": 0.015
+    },
+    {
+      "test": "test_edges.EdgeTests.test_schema_exposes_choices_not_script_values",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_edges.EdgeTests.test_style_rate_changes_estimate",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_actual_38_to_28_revision_and_recheck",
+      "seconds": 0.125
+    },
+    {
+      "test": "test_script.ScriptTests.test_all_required_fields_missing_individually",
+      "seconds": 0.079
+    },
+    {
+      "test": "test_script.ScriptTests.test_blank_required_fields",
+      "seconds": 0.031
+    },
+    {
+      "test": "test_script.ScriptTests.test_catalog_fact_not_retrieved_is_rejected",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_changed_catalog_same_id_rejected",
+      "seconds": 0.094
+    },
+    {
+      "test": "test_script.ScriptTests.test_changed_request_same_id_rejected",
+      "seconds": 0.078
+    },
+    {
+      "test": "test_script.ScriptTests.test_correct_citation_does_not_allow_added_claim",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_duplicate_material_and_bad_schema",
+      "seconds": 0.015
+    },
+    {
+      "test": "test_script.ScriptTests.test_empty_search_rewrite_then_request_info",
+      "seconds": 0.047
+    },
+    {
+      "test": "test_script.ScriptTests.test_equal_target_passes_one_tenth_over_fails",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_estimate_failure_not_passed",
+      "seconds": 0.063
+    },
+    {
+      "test": "test_script.ScriptTests.test_fake_completion_blocked",
+      "seconds": 0.047
+    },
+    {
+      "test": "test_script.ScriptTests.test_fake_source_or_fact_not_supported",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_forbidden_source_fact_still_fails_brand",
+      "seconds": 0.015
+    },
+    {
+      "test": "test_script.ScriptTests.test_invalid_durations_rejected",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_malformed_action_bounded",
+      "seconds": 0.063
+    },
+    {
+      "test": "test_script.ScriptTests.test_model_failure_preserves_draft",
+      "seconds": 0.047
+    },
+    {
+      "test": "test_script.ScriptTests.test_no_sources_cannot_draft",
+      "seconds": 0.031
+    },
+    {
+      "test": "test_script.ScriptTests.test_normal_grounded_generation",
+      "seconds": 0.203
+    },
+    {
+      "test": "test_script.ScriptTests.test_numeric_equivalence_idempotency",
+      "seconds": 0.016
+    },
+    {
+      "test": "test_script.ScriptTests.test_one_second_cannot_satisfy",
+      "seconds": 0.531
+    },
+    {
+      "test": "test_script.ScriptTests.test_punctuation_normalization_not_claim_normalization",
+      "seconds": 0.015
+    },
+    {
+      "test": "test_script.ScriptTests.test_query_rewrite_changes_result",
+      "seconds": 0.25
+    },
+    {
+      "test": "test_script.ScriptTests.test_repeat_reuses_checked_script",
+      "seconds": 0.25
+    },
+    {
+      "test": "test_script.ScriptTests.test_rules_check_must_cover_current_version",
+      "seconds": 0.11
+    },
+    {
+      "test": "test_script.ScriptTests.test_rules_failure_not_passed",
+      "seconds": 0.281
+    },
+    {
+      "test": "test_script.ScriptTests.test_same_key_lease_excludes_concurrent_run",
+      "seconds": 0.031
+    },
+    {
+      "test": "test_script.ScriptTests.test_search_invalidates_checks",
+      "seconds": 0.078
+    },
+    {
+      "test": "test_script.ScriptTests.test_step_limit_preserves_draft",
+      "seconds": 0.235
+    },
+    {
+      "test": "test_script.ScriptTests.test_title_and_visual_also_checked",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_tool_failure_and_resume",
+      "seconds": 0.125
+    },
+    {
+      "test": "test_script.ScriptTests.test_transition_included_exactly_between_scenes",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_script.ScriptTests.test_unsupported_80_percent_repaired",
+      "seconds": 0.125
+    },
+    {
+      "test": "test_script.ScriptTests.test_unsupported_platform_cannot_complete",
+      "seconds": 0.203
+    },
+    {
+      "test": "test_script.ScriptTests.test_voiceover_lower_bound_overrides_fake_short_hold",
+      "seconds": 0.0
+    },
+    {
+      "test": "test_web.WebTests.test_bad_json_and_unknown_fields",
+      "seconds": 0.562
+    },
+    {
+      "test": "test_web.WebTests.test_changed_input_rejects_reuse",
+      "seconds": 0.75
+    },
+    {
+      "test": "test_web.WebTests.test_cross_origin_token_and_host",
+      "seconds": 0.547
+    },
+    {
+      "test": "test_web.WebTests.test_edit_duration_rechecked_then_agent_repairs",
+      "seconds": 1.016
+    },
+    {
+      "test": "test_web.WebTests.test_edit_preserves_unsupported_text_and_fails",
+      "seconds": 0.844
+    },
+    {
+      "test": "test_web.WebTests.test_malformed_edit",
+      "seconds": 0.531
+    },
+    {
+      "test": "test_web.WebTests.test_missing_job_and_api_prefix",
+      "seconds": 0.547
+    },
+    {
+      "test": "test_web.WebTests.test_no_materials_and_missing",
+      "seconds": 0.734
+    },
+    {
+      "test": "test_web.WebTests.test_normal_and_repeat",
+      "seconds": 0.813
+    },
+    {
+      "test": "test_web.WebTests.test_pages_health_and_manual",
+      "seconds": 0.64
+    },
+    {
+      "test": "test_web.WebTests.test_restart_reuses_saved_result",
+      "seconds": 0.657
+    },
+    {
+      "test": "test_web.WebTests.test_valid_edit_uses_fresh_request",
+      "seconds": 0.859
+    }
+  ]
+}

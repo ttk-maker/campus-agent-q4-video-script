@@ -1,0 +1,86 @@
+{
+  "mode": "mock",
+  "started_at": "2026-11-06T09:24:26.495825+00:00",
+  "cases": [
+    {
+      "name": "normal",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "repeat_zero_steps": true
+      },
+      "passed": true
+    },
+    {
+      "name": "over_duration",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "observed_38_then_revised": true
+      },
+      "passed": true
+    },
+    {
+      "name": "missing",
+      "checks": {
+        "no_fake_ready": true,
+        "zero_calls_and_missing": true
+      },
+      "passed": true
+    },
+    {
+      "name": "no_materials",
+      "checks": {
+        "no_fake_ready": true,
+        "no_fabrication": true
+      },
+      "passed": true
+    },
+    {
+      "name": "tool_failure",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "actual_failure": true
+      },
+      "passed": true
+    },
+    {
+      "name": "claim_risk",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "actual_rule_failure_observed": true
+      },
+      "passed": true
+    },
+    {
+      "name": "too_short",
+      "checks": {
+        "no_fake_ready": true,
+        "explicit_failure": true
+      },
+      "passed": true
+    },
+    {
+      "name": "rewrite",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "finished_at": "2026-11-06T09:24:27.500957+00:00"
+}

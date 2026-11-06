@@ -1,0 +1,173 @@
+{
+  "request_id": "normal-7848fad910a3",
+  "status": "completed",
+  "reason": null,
+  "script_status": "ready",
+  "script": {
+    "title": "字幕功能介绍",
+    "scenes": [
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "产品界面特写",
+        "seconds": 10
+      },
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "产品界面特写",
+        "seconds": 9
+      },
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "产品界面特写",
+        "seconds": 9
+      }
+    ]
+  },
+  "revision": 1,
+  "estimated_total_seconds": 28.0,
+  "duration_check": {
+    "status": "checked",
+    "passed": true,
+    "total_seconds": 28.0,
+    "target_seconds": 30.0,
+    "over_seconds": 0.0,
+    "scenes": [
+      {
+        "scene": 1,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "speech_units": 4,
+        "voice_seconds": 1.5,
+        "hold_seconds": 10.0,
+        "estimated_seconds": 10.0,
+        "start": 0.0,
+        "end": 10.0
+      },
+      {
+        "scene": 2,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "speech_units": 4,
+        "voice_seconds": 1.5,
+        "hold_seconds": 9.0,
+        "estimated_seconds": 9.0,
+        "start": 10.0,
+        "end": 19.0
+      },
+      {
+        "scene": 3,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "speech_units": 4,
+        "voice_seconds": 1.5,
+        "hold_seconds": 9.0,
+        "estimated_seconds": 9.0,
+        "start": 19.0,
+        "end": 28.0
+      }
+    ],
+    "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+    "characters_per_second": 4.0,
+    "transition_seconds": 0.0,
+    "kind": "heuristic_not_audio_measurement",
+    "revision": 1,
+    "key": "d46e74ca68038d96511e946df219931c992d6768c8e1ef7a2cdb5da8af19c039"
+  },
+  "rules_check": {
+    "status": "checked",
+    "passed": true,
+    "risks": [],
+    "scenes": [
+      {
+        "scene": 1,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "source_text": "支持字幕。",
+        "voiceover": "支持字幕。",
+        "supported": true
+      },
+      {
+        "scene": 2,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "source_text": "支持字幕。",
+        "voiceover": "支持字幕。",
+        "supported": true
+      },
+      {
+        "scene": 3,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "source_text": "支持字幕。",
+        "voiceover": "支持字幕。",
+        "supported": true
+      }
+    ],
+    "policy": "extractive_grounding_v1",
+    "revision": 1,
+    "key": "d46e74ca68038d96511e946df219931c992d6768c8e1ef7a2cdb5da8af19c039"
+  },
+  "risks": [],
+  "source_ids": [
+    "P01"
+  ],
+  "retrieved_sources": [
+    {
+      "id": "P01",
+      "name": "字幕助手产品素材",
+      "keywords": [
+        "字幕",
+        "视频助手",
+        "短视频",
+        "caption"
+      ],
+      "facts": [
+        {
+          "id": "F01",
+          "text": "支持字幕。"
+        }
+      ]
+    }
+  ],
+  "revision_history": [],
+  "tool_events": [
+    {
+      "tool": "search_materials",
+      "status": "found",
+      "revision": 0,
+      "passed": null,
+      "attempt": 1
+    },
+    {
+      "tool": "submit_script",
+      "status": "drafted",
+      "revision": 1
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": true,
+      "attempt": 1
+    },
+    {
+      "tool": "check_rules",
+      "status": "checked",
+      "revision": 1,
+      "passed": true,
+      "attempt": 1
+    }
+  ],
+  "missing": [],
+  "published": false,
+  "mode": "mock",
+  "model": "offline-grounded-policy-v1",
+  "steps_used": 5,
+  "max_steps": 16
+}

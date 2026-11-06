@@ -23,8 +23,15 @@ def require_text(value, limit=1000):
         raise ValueError("nonempty bounded text required")
 
 def normalize(text):
-    # Ignore punctuation/space, not letters or numbers. NFKC handles full-width text.
-    return "".join(c for c in unicodedata.normalize("NFKC",text) if not c.isspace() and not unicodedata.category(c).startswith("P"))
+    # Only ignore sentence punctuation away from digits. Dropping all punctuation
+    # would conflate 1.0 with 10 or -5 with 5 and silently change factual quantities.
+    value="".join(c for c in unicodedata.normalize("NFKC",text) if not c.isspace())
+    result=[]
+    for i,c in enumerate(value):
+        adjacent_digit=(i>0 and value[i-1].isdigit()) or (i+1<len(value) and value[i+1].isdigit())
+        if c in "。！？!?,，；;：:、." and not adjacent_digit:continue
+        result.append(c)
+    return "".join(result)
 
 def validate_script(script):
     if not isinstance(script,dict) or set(script)!={"title","scenes"}: raise ValueError("script requires title and scenes")

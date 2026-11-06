@@ -86,6 +86,17 @@ class EdgeTests(unittest.TestCase):
         empty=e.execute(base.action("search_materials",query="字幕"))
         self.assertEqual(empty["available_source_count"],0)
         self.assertIn("entire source library is empty",empty["hint"])
+    def test_punctuation_query_cannot_match_entire_library(self):
+        e=self.engine();r=e.execute(base.action("search_materials",query="！？"))
+        self.assertEqual(r["status"],"rejected");self.assertEqual(e.view()["retrieved"],{})
+    def test_numeric_punctuation_cannot_change_claim(self):
+        c=self.payload["catalog"];d=draft()
+        for fact,claim in (("数值为1.0。","数值为10。"),("温度为-5度。","温度为5度。"),("支持1-2行。","支持12行。")):
+            c["materials"][0]["facts"][0]["text"]=fact
+            for scene in d["scenes"]:scene["voiceover"]=fact
+            d["scenes"][0]["voiceover"]=claim
+            r=check(d,self.payload["request"],c,{"P01":c["materials"][0]})
+            self.assertFalse(r["passed"])
     def test_cross_process_failure_resume(self):
         p=scenario("tool_failure");folder=Path(self.temp.name)
         for name,data in (("request.json",p["request"]),("catalog.json",p["catalog"])):(folder/name).write_text(json.dumps(data),encoding="utf-8")

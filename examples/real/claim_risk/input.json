@@ -1,0 +1,93 @@
+{
+  "request": {
+    "request_id": "claim_risk-58248df7d483",
+    "topic": "视频助手字幕功能",
+    "audience": "短视频创作者",
+    "platform": "抖音",
+    "target_seconds": 30,
+    "style": "简洁",
+    "initial_script": {
+      "title": "字幕功能介绍",
+      "scenes": [
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "支持字幕，效率提升80%。",
+          "visual": "产品界面特写",
+          "seconds": 10
+        },
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "支持字幕。",
+          "visual": "字幕文字卡",
+          "seconds": 9
+        },
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "支持字幕。",
+          "visual": "创作者出镜",
+          "seconds": 9
+        }
+      ]
+    }
+  },
+  "catalog": {
+    "version": "synthetic-v1",
+    "materials": [
+      {
+        "id": "P01",
+        "name": "字幕助手产品素材",
+        "keywords": [
+          "字幕",
+          "视频助手",
+          "短视频",
+          "caption"
+        ],
+        "facts": [
+          {
+            "id": "F01",
+            "text": "支持字幕。"
+          }
+        ]
+      }
+    ],
+    "rules": {
+      "titles": [
+        "字幕功能介绍",
+        "一起看看字幕",
+        "一分钟认识字幕"
+      ],
+      "visuals": [
+        "产品界面特写",
+        "字幕文字卡",
+        "创作者出镜"
+      ],
+      "forbidden": [
+        "效率提升",
+        "80%",
+        "百分之八十",
+        "保证",
+        "最佳",
+        "永久免费"
+      ],
+      "platforms": [
+        "抖音",
+        "小红书",
+        "视频号",
+        "B站"
+      ],
+      "styles": {
+        "简洁": 4,
+        "活泼": 4.5,
+        "沉稳": 3
+      },
+      "transition_seconds": 0,
+      "max_scenes": 8
+    },
+    "failures": {}
+  },
+  "mode": "real",
+  "max_steps": 16
+}

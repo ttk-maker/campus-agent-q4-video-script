@@ -1,0 +1,54 @@
+{
+  "request_id": "over_duration-8a8e184c240d",
+  "status": "budget_exhausted",
+  "reason": "model_step_limit",
+  "script_status": "unverified",
+  "script": {
+    "title": "字幕功能介绍",
+    "scenes": [
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "产品界面特写",
+        "seconds": 14
+      },
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "字幕文字卡",
+        "seconds": 12
+      },
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "创作者出镜",
+        "seconds": 12
+      }
+    ]
+  },
+  "revision": 1,
+  "estimated_total_seconds": null,
+  "duration_check": null,
+  "rules_check": null,
+  "risks": [
+    {
+      "code": "rules_unchecked",
+      "detail": "Current script has not passed a current rule check."
+    }
+  ],
+  "source_ids": [
+    "P01"
+  ],
+  "retrieved_sources": [],
+  "revision_history": [],
+  "tool_events": [],
+  "missing": [],
+  "published": false,
+  "mode": "real",
+  "model": "qwen2.5:7b-instruct",
+  "steps_used": 16,
+  "max_steps": 16
+}

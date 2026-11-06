@@ -1,0 +1,60 @@
+{
+  "mode": "real",
+  "started_at": "2026-11-06T09:26:18.818587+00:00",
+  "cases": [
+    {
+      "name": "over_duration",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "observed_38_then_revised": true
+      },
+      "passed": true
+    },
+    {
+      "name": "normal",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "repeat_zero_steps": true
+      },
+      "passed": true
+    },
+    {
+      "name": "no_materials",
+      "checks": {
+        "no_fake_ready": true,
+        "no_fabrication": false
+      },
+      "passed": false
+    },
+    {
+      "name": "tool_failure",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "actual_failure": true
+      },
+      "passed": true
+    },
+    {
+      "name": "claim_risk",
+      "checks": {
+        "no_fake_ready": true,
+        "completed": true,
+        "within_duration": true,
+        "fact_supported": true,
+        "actual_rule_failure_observed": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "finished_at": "2026-11-06T09:40:12.975659+00:00"
+}

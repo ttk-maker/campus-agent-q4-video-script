@@ -1,0 +1,34 @@
+{
+  "request_id": "tool_failure-da0e855b9103",
+  "status": "failed",
+  "reason": "tool_failure",
+  "script_status": "unverified",
+  "script": null,
+  "revision": 0,
+  "estimated_total_seconds": null,
+  "duration_check": null,
+  "rules_check": null,
+  "risks": [
+    {
+      "code": "rules_unchecked",
+      "detail": "Current script has not passed a current rule check."
+    }
+  ],
+  "source_ids": [],
+  "retrieved_sources": [],
+  "revision_history": [],
+  "tool_events": [
+    {
+      "tool": "search_materials",
+      "status": "failed",
+      "error": "injected_tool_failure",
+      "attempt": 1
+    }
+  ],
+  "missing": [],
+  "published": false,
+  "mode": "mock",
+  "model": "offline-grounded-policy-v1",
+  "steps_used": 2,
+  "max_steps": 16
+}

@@ -1,0 +1,16 @@
+{
+  "mode": "real",
+  "started_at": "2026-11-06T09:41:10.707841+00:00",
+  "cases": [
+    {
+      "name": "no_materials",
+      "checks": {
+        "no_fake_ready": true,
+        "no_fabrication": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "finished_at": "2026-11-06T09:41:54.988854+00:00"
+}

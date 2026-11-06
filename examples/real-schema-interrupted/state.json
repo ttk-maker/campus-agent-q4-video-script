@@ -1,0 +1,692 @@
+{
+  "request": {
+    "request_id": "over_duration-8a8e184c240d",
+    "topic": "视频助手字幕功能",
+    "audience": "短视频创作者",
+    "platform": "抖音",
+    "target_seconds": 30,
+    "style": "简洁",
+    "initial_script": {
+      "title": "字幕功能介绍",
+      "scenes": [
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "支持字幕。",
+          "visual": "产品界面特写",
+          "seconds": 14
+        },
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "支持字幕。",
+          "visual": "字幕文字卡",
+          "seconds": 12
+        },
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "支持字幕。",
+          "visual": "创作者出镜",
+          "seconds": 12
+        }
+      ]
+    }
+  },
+  "catalog": {
+    "version": "synthetic-v1",
+    "materials": [
+      {
+        "id": "P01",
+        "name": "字幕助手产品素材",
+        "keywords": [
+          "字幕",
+          "视频助手",
+          "短视频",
+          "caption"
+        ],
+        "facts": [
+          {
+            "id": "F01",
+            "text": "支持字幕。"
+          }
+        ]
+      }
+    ],
+    "rules": {
+      "titles": [
+        "字幕功能介绍",
+        "一起看看字幕",
+        "一分钟认识字幕"
+      ],
+      "visuals": [
+        "产品界面特写",
+        "字幕文字卡",
+        "创作者出镜"
+      ],
+      "forbidden": [
+        "效率提升",
+        "80%",
+        "百分之八十",
+        "保证",
+        "最佳",
+        "永久免费"
+      ],
+      "platforms": [
+        "抖音",
+        "小红书",
+        "视频号",
+        "B站"
+      ],
+      "styles": {
+        "简洁": 4,
+        "活泼": 4.5,
+        "沉稳": 3
+      },
+      "transition_seconds": 0,
+      "max_scenes": 8
+    },
+    "failures": {}
+  },
+  "created_at": "2026-11-06T09:22:32.922595+00:00",
+  "retrieved": {},
+  "searches": [],
+  "attempts": {
+    "estimate_duration": 8
+  },
+  "events": [
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 1
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 2
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 3
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 4
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 5
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 6
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 7
+    },
+    {
+      "tool": "estimate_duration",
+      "status": "checked",
+      "revision": 1,
+      "passed": false,
+      "attempt": 8
+    }
+  ],
+  "script": {
+    "title": "字幕功能介绍",
+    "scenes": [
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "产品界面特写",
+        "seconds": 14
+      },
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "字幕文字卡",
+        "seconds": 12
+      },
+      {
+        "source_id": "P01",
+        "fact_id": "F01",
+        "voiceover": "支持字幕。",
+        "visual": "创作者出镜",
+        "seconds": 12
+      }
+    ]
+  },
+  "revision": 1,
+  "revisions": [],
+  "duration_check": {
+    "status": "checked",
+    "passed": false,
+    "total_seconds": 38.0,
+    "target_seconds": 30.0,
+    "over_seconds": 8.0,
+    "scenes": [
+      {
+        "scene": 1,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "speech_units": 4,
+        "voice_seconds": 1.5,
+        "hold_seconds": 14.0,
+        "estimated_seconds": 14.0,
+        "start": 0.0,
+        "end": 14.0
+      },
+      {
+        "scene": 2,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "speech_units": 4,
+        "voice_seconds": 1.5,
+        "hold_seconds": 12.0,
+        "estimated_seconds": 12.0,
+        "start": 14.0,
+        "end": 26.0
+      },
+      {
+        "scene": 3,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "speech_units": 4,
+        "voice_seconds": 1.5,
+        "hold_seconds": 12.0,
+        "estimated_seconds": 12.0,
+        "start": 26.0,
+        "end": 38.0
+      }
+    ],
+    "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+    "characters_per_second": 4.0,
+    "transition_seconds": 0.0,
+    "kind": "heuristic_not_audio_measurement",
+    "revision": 1,
+    "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+  },
+  "rules_check": null,
+  "status": "pending",
+  "reason": null,
+  "trace": [
+    {
+      "step": 1,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本总时长为38秒，超过目标的30秒，需要调整"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 2,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少时长或删除部分场景。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 3,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少时长或删除场景。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 4,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少时长或删除场景。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 5,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少时长或删除场景。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 6,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少时长或删除部分场景。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 7,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少时长或删除场景。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 8,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "当前剧本超过目标时长，需要减少总时长以满足要求。"
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "total_seconds": 38.0,
+        "target_seconds": 30.0,
+        "over_seconds": 8.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 14.0,
+            "estimated_seconds": 14.0,
+            "start": 0.0,
+            "end": 14.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 14.0,
+            "end": 26.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 4,
+            "voice_seconds": 1.5,
+            "hold_seconds": 12.0,
+            "estimated_seconds": 12.0,
+            "start": 26.0,
+            "end": 38.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "f49ddd46ed0a4471b00b117b3eb741db16a687e63d53eb8ceae82ff75be6e4fd"
+      },
+      "next_action": null
+    }
+  ]
+}
