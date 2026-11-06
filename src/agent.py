@@ -16,6 +16,7 @@ class Agent:
         engine=Engine(self.store,request["request_id"],owner)
         status,reason="budget_exhausted","model_step_limit"
         try:
+            engine.invalidate_stale_checks()
             if missing:status,reason="needs_information","missing_required_inputs"
             elif engine.ready(self.store.get(request["request_id"])):status,reason="completed","existing_checked_script_reused"
             else:
@@ -50,7 +51,10 @@ class Agent:
                     self.store.mutate(request["request_id"],owner,lambda s,db:s.update(trace=self.trace))
                     if terminal:break
                 if self.trace and self.trace[-1]["next_action"] is None:self.trace[-1]["next_action"]="stop:"+status
-            self.store.mutate(request["request_id"],owner,lambda s,db:s.update(status=status,reason=reason))
+            def finish_state(state,db):
+                if self.trace:state['trace']=self.trace
+                state.update(status=status,reason=reason)
+            self.store.mutate(request["request_id"],owner,finish_state)
             result=engine.result(status,reason)
             result.update(mode=self.model.mode,model=self.model.name,steps_used=len(self.trace),max_steps=self.max_steps)
             return result

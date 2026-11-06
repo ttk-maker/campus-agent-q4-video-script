@@ -3,7 +3,9 @@ from copy import deepcopy
 from decimal import Decimal, ROUND_CEILING
 import re
 
-from .domain import digest, normalize, number, validate_script
+from .domain import digest, normalize, fact_normalize, number, validate_script
+
+CHECK_POLICY = 'grounding-v2-boundaries-duration-v1'
 
 def estimate(script, request, rules):
     rate=Decimal(str(rules["styles"].get(request["style"],3)))
@@ -33,7 +35,7 @@ def check(script, request, catalog, retrieved):
     for i,scene in enumerate(script["scenes"],1):
         source=retrieved.get(scene["source_id"])
         fact=next((f for f in source["facts"] if f["id"]==scene["fact_id"]),None) if source else None
-        supported=bool(fact and normalize(scene["voiceover"])==normalize(fact["text"]))
+        supported=bool(fact and fact_normalize(scene["voiceover"])==fact_normalize(fact["text"]))
         if not source:risk("source_not_retrieved",f"scenes.{i}.source_id",scene["source_id"])
         elif not fact:risk("unknown_fact",f"scenes.{i}.fact_id",scene["fact_id"])
         elif not supported:risk("unsupported_claim",f"scenes.{i}.voiceover","Must match the cited fact. No inferred benefits or numbers.")
@@ -44,13 +46,22 @@ def check(script, request, catalog, retrieved):
     for field,text in fields:
         for term in rules["forbidden"]:
             if normalize(term).casefold() in normalize(text).casefold():risk("brand_forbidden",field,term)
-    return {"passed":not risks,"risks":risks,"scenes":rows,"policy":"extractive_grounding_v1"}
+    return {"passed":not risks,"risks":risks,"scenes":rows,"policy":CHECK_POLICY}
 
 class Engine:
     def __init__(self,store,request_id,owner):self.store,self.request_id,self.owner=store,request_id,owner
 
     @staticmethod
-    def check_key(state):return digest([state["script"],state["revision"],state["catalog"],state["request"],state["retrieved"]])
+    def check_key(state):return digest([CHECK_POLICY,state["script"],state["revision"],state["catalog"],state["request"],state["retrieved"]])
+
+    def invalidate_stale_checks(self):
+        def refresh(state,db):
+            key=self.check_key(state)
+            for field in ('duration_check','rules_check'):
+                if state[field] and state[field].get('key')!=key:
+                    state.setdefault('check_history',[]).append({'field':field,'check':state[field],'reason':'policy_or_content_changed'})
+                    state[field]=None
+        self.store.mutate(self.request_id,self.owner,refresh)
 
     @classmethod
     def ready(cls,state):

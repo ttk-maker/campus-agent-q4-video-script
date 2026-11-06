@@ -2,6 +2,7 @@
 from decimal import Decimal, InvalidOperation
 import hashlib
 import json
+import re
 import unicodedata
 
 REQUIRED = ("topic", "audience", "platform", "target_seconds", "style")
@@ -10,10 +11,10 @@ def digest(value):
     return hashlib.sha256(json.dumps(value,ensure_ascii=False,sort_keys=True,allow_nan=False,separators=(",",":")).encode()).hexdigest()
 
 def number(value, minimum=0.1, maximum=600):
-    if isinstance(value,bool): raise ValueError("boolean is not a duration")
+    if isinstance(value,bool) or len(str(value))>80: raise ValueError("invalid duration representation")
     try:
         n=Decimal(str(value))
-        if not n.is_finite() or not Decimal(str(minimum))<=n<=Decimal(str(maximum)) or n*10 != (n*10).to_integral_value():
+        if not n.is_finite() or not Decimal(str(minimum))<=n<=Decimal(str(maximum)) or n != n.quantize(Decimal('0.1')):
             raise ValueError("duration must be finite with at most one decimal")
         return n
     except InvalidOperation: raise ValueError("invalid number") from None
@@ -32,6 +33,21 @@ def normalize(text):
         if c in "。！？!?,，；;：:、." and not adjacent_digit:continue
         result.append(c)
     return "".join(result)
+
+def fact_normalize(text):
+    """Preserve clause boundaries, questions, Latin word boundaries and unit exponents.
+
+    NFC deliberately avoids compatibility folding of m² into m2. Only spacing
+    between Han characters and final declarative/exclamatory punctuation is ignored.
+    Search and duration normalization have separate, looser semantics.
+    """
+    value=unicodedata.normalize('NFC',text).strip()
+    value=re.sub(r'(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])','',value)
+    value=re.sub(r'\s+',' ',value)
+    if value.endswith(('。','！','!')):value=value[:-1]
+    elif value.endswith('.') and (len(value)<2 or not value[-2].isdigit()):value=value[:-1]
+    return value
+
 
 def validate_script(script):
     if not isinstance(script,dict) or set(script)!={"title","scenes"}: raise ValueError("script requires title and scenes")
