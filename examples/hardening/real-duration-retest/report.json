@@ -1,0 +1,14 @@
+{
+  "mode": "real",
+  "cases": [
+    {
+      "name": "impossible_duration",
+      "checks": {
+        "correct_status": false,
+        "no_fake_ready": true
+      },
+      "passed": false
+    }
+  ],
+  "passed": false
+}

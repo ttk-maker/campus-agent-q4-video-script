@@ -1,0 +1,16 @@
+test_budget_stop_is_persisted_in_trace (tests.test_hardening.HardeningTests) ... ok
+test_english_word_boundary_is_factual (tests.test_hardening.HardeningTests) ... ok
+test_exact_claim_with_ending_punctuation_still_allowed (tests.test_hardening.HardeningTests) ... ok
+test_fractional_duration_not_rounded_into_valid_input (tests.test_hardening.HardeningTests) ... ok
+test_internal_punctuation_changes_clause_meaning (tests.test_hardening.HardeningTests) ... ok
+test_model_failure_is_in_durable_trace (tests.test_hardening.HardeningTests) ... ok
+test_multi_source_wrong_fact_id_cannot_borrow_text (tests.test_hardening.HardeningTests) ... ok
+test_old_policy_ready_cache_requires_recheck (tests.test_hardening.HardeningTests) ... ok
+test_question_cannot_become_assertion (tests.test_hardening.HardeningTests) ... ok
+test_superscript_unit_cannot_be_flattened (tests.test_hardening.HardeningTests) ... ok
+test_two_threads_only_one_can_mutate_request (tests.test_hardening.HardeningTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.660s
+
+OK

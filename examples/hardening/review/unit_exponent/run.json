@@ -1,0 +1,355 @@
+{
+  "output": {
+    "request_id": "unit_exponent",
+    "status": "cannot_satisfy",
+    "reason": "checks_not_satisfied",
+    "script_status": "unverified",
+    "script": {
+      "title": "字幕功能介绍",
+      "scenes": [
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "面积2m2。",
+          "visual": "产品界面特写",
+          "seconds": 10
+        },
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "面积2m²。",
+          "visual": "字幕文字卡",
+          "seconds": 9
+        },
+        {
+          "source_id": "P01",
+          "fact_id": "F01",
+          "voiceover": "面积2m²。",
+          "visual": "创作者出镜",
+          "seconds": 9
+        }
+      ]
+    },
+    "revision": 1,
+    "estimated_total_seconds": 28.0,
+    "duration_check": {
+      "status": "checked",
+      "passed": true,
+      "total_seconds": 28.0,
+      "target_seconds": 30.0,
+      "over_seconds": 0.0,
+      "scenes": [
+        {
+          "scene": 1,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "speech_units": 6,
+          "voice_seconds": 2.0,
+          "hold_seconds": 10.0,
+          "estimated_seconds": 10.0,
+          "start": 0.0,
+          "end": 10.0
+        },
+        {
+          "scene": 2,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "speech_units": 6,
+          "voice_seconds": 2.0,
+          "hold_seconds": 9.0,
+          "estimated_seconds": 9.0,
+          "start": 10.0,
+          "end": 19.0
+        },
+        {
+          "scene": 3,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "speech_units": 6,
+          "voice_seconds": 2.0,
+          "hold_seconds": 9.0,
+          "estimated_seconds": 9.0,
+          "start": 19.0,
+          "end": 28.0
+        }
+      ],
+      "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+      "characters_per_second": 4.0,
+      "transition_seconds": 0.0,
+      "kind": "heuristic_not_audio_measurement",
+      "revision": 1,
+      "key": "bb3421c7047c47cd29407891be2d84b1f56c4e626f4f6e1247878969f97527fd",
+      "catalog_bound": {
+        "proven_impossible": false,
+        "minimum_seconds": 2.0,
+        "source_id": "P01",
+        "fact_id": "F01",
+        "reason": "Every valid script needs at least one complete source fact. Holds cannot shorten speech."
+      }
+    },
+    "rules_check": {
+      "status": "checked",
+      "passed": false,
+      "risks": [
+        {
+          "code": "unsupported_claim",
+          "field": "scenes.1.voiceover",
+          "detail": "Must match the cited fact. No inferred benefits or numbers."
+        }
+      ],
+      "scenes": [
+        {
+          "scene": 1,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "source_text": "面积2m²。",
+          "voiceover": "面积2m2。",
+          "supported": false
+        },
+        {
+          "scene": 2,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "source_text": "面积2m²。",
+          "voiceover": "面积2m²。",
+          "supported": true
+        },
+        {
+          "scene": 3,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "source_text": "面积2m²。",
+          "voiceover": "面积2m²。",
+          "supported": true
+        }
+      ],
+      "policy": "grounding-v2-boundaries-duration-v2",
+      "revision": 1,
+      "key": "bb3421c7047c47cd29407891be2d84b1f56c4e626f4f6e1247878969f97527fd"
+    },
+    "risks": [
+      {
+        "code": "unsupported_claim",
+        "field": "scenes.1.voiceover",
+        "detail": "Must match the cited fact. No inferred benefits or numbers."
+      }
+    ],
+    "source_ids": [
+      "P01"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "P01",
+        "name": "字幕助手产品素材",
+        "keywords": [
+          "字幕",
+          "视频助手",
+          "短视频",
+          "caption"
+        ],
+        "facts": [
+          {
+            "id": "F01",
+            "text": "面积2m²。"
+          }
+        ]
+      }
+    ],
+    "revision_history": [],
+    "tool_events": [
+      {
+        "tool": "search_materials",
+        "status": "found",
+        "revision": 1,
+        "passed": null,
+        "attempt": 1
+      },
+      {
+        "tool": "estimate_duration",
+        "status": "checked",
+        "revision": 1,
+        "passed": true,
+        "attempt": 1
+      },
+      {
+        "tool": "check_rules",
+        "status": "checked",
+        "revision": 1,
+        "passed": false,
+        "attempt": 1
+      }
+    ],
+    "missing": [],
+    "published": false,
+    "mode": "review",
+    "model": "manual-edit-checks-no-model",
+    "steps_used": 4,
+    "max_steps": 16
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": {
+        "tool": "search_materials",
+        "arguments": {
+          "query": "字幕"
+        },
+        "reason": "User explicitly requested checks of edited script; no model generation."
+      },
+      "observation": {
+        "status": "found",
+        "count": 1,
+        "materials": [
+          {
+            "id": "P01",
+            "name": "字幕助手产品素材",
+            "keywords": [
+              "字幕",
+              "视频助手",
+              "短视频",
+              "caption"
+            ],
+            "facts": [
+              {
+                "id": "F01",
+                "text": "面积2m²。"
+              }
+            ]
+          }
+        ],
+        "available_source_count": 1,
+        "hint": null
+      },
+      "next_action": "estimate_duration"
+    },
+    {
+      "step": 2,
+      "action": {
+        "tool": "estimate_duration",
+        "arguments": {},
+        "reason": "User explicitly requested checks of edited script; no model generation."
+      },
+      "observation": {
+        "status": "checked",
+        "passed": true,
+        "total_seconds": 28.0,
+        "target_seconds": 30.0,
+        "over_seconds": 0.0,
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 6,
+            "voice_seconds": 2.0,
+            "hold_seconds": 10.0,
+            "estimated_seconds": 10.0,
+            "start": 0.0,
+            "end": 10.0
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 6,
+            "voice_seconds": 2.0,
+            "hold_seconds": 9.0,
+            "estimated_seconds": 9.0,
+            "start": 10.0,
+            "end": 19.0
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "speech_units": 6,
+            "voice_seconds": 2.0,
+            "hold_seconds": 9.0,
+            "estimated_seconds": 9.0,
+            "start": 19.0,
+            "end": 28.0
+          }
+        ],
+        "formula": "max(hold_seconds, ceil_0.1(normalized_character_count / style_rate + 0.5)) + transitions",
+        "characters_per_second": 4.0,
+        "transition_seconds": 0.0,
+        "kind": "heuristic_not_audio_measurement",
+        "revision": 1,
+        "key": "bb3421c7047c47cd29407891be2d84b1f56c4e626f4f6e1247878969f97527fd",
+        "catalog_bound": {
+          "proven_impossible": false,
+          "minimum_seconds": 2.0,
+          "source_id": "P01",
+          "fact_id": "F01",
+          "reason": "Every valid script needs at least one complete source fact. Holds cannot shorten speech."
+        }
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 3,
+      "action": {
+        "tool": "check_rules",
+        "arguments": {},
+        "reason": "User explicitly requested checks of edited script; no model generation."
+      },
+      "observation": {
+        "status": "checked",
+        "passed": false,
+        "risks": [
+          {
+            "code": "unsupported_claim",
+            "field": "scenes.1.voiceover",
+            "detail": "Must match the cited fact. No inferred benefits or numbers."
+          }
+        ],
+        "scenes": [
+          {
+            "scene": 1,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "source_text": "面积2m²。",
+            "voiceover": "面积2m2。",
+            "supported": false
+          },
+          {
+            "scene": 2,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "source_text": "面积2m²。",
+            "voiceover": "面积2m²。",
+            "supported": true
+          },
+          {
+            "scene": 3,
+            "source_id": "P01",
+            "fact_id": "F01",
+            "source_text": "面积2m²。",
+            "voiceover": "面积2m²。",
+            "supported": true
+          }
+        ],
+        "policy": "grounding-v2-boundaries-duration-v2",
+        "revision": 1,
+        "key": "bb3421c7047c47cd29407891be2d84b1f56c4e626f4f6e1247878969f97527fd"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 4,
+      "action": {
+        "tool": "finish",
+        "arguments": {
+          "outcome": "cannot_satisfy"
+        },
+        "reason": "User explicitly requested checks of edited script; no model generation."
+      },
+      "observation": {
+        "status": "finished",
+        "outcome": "cannot_satisfy"
+      },
+      "next_action": "stop:cannot_satisfy"
+    }
+  ],
+  "mode": "review"
+}

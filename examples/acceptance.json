@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-11-06T09:46:47.099592+00:00",
+  "verified_at": "2026-11-06T13:22:13.293324+00:00",
   "passed": true,
   "checks": {
     "real_generated_normal": true,
@@ -11,8 +11,19 @@
     "real_browser": true,
     "mock": true,
     "tests": true,
-    "browser": true
+    "browser": true,
+    "hardening_review": true,
+    "hardening_browser": true,
+    "hardening_real-duration-final": true,
+    "hardening_word_boundary_repair": true,
+    "hardening_impossible_not_ready": true
   },
+  "historical_hardening_failures": [
+    "examples/hardening/before.txt",
+    "examples/hardening/before-voice-feedback.txt",
+    "examples/hardening/real/impossible_duration",
+    "examples/hardening/real-duration-retest"
+  ],
   "duration_observations": [
     38.0,
     20.0

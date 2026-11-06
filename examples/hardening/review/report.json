@@ -1,0 +1,71 @@
+{
+  "mode": "review",
+  "cases": [
+    {
+      "name": "english_boundary",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    },
+    {
+      "name": "question",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    },
+    {
+      "name": "clause_boundary",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    },
+    {
+      "name": "unit_exponent",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    },
+    {
+      "name": "decimal",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    },
+    {
+      "name": "valid",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    },
+    {
+      "name": "impossible_duration",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true,
+        "no_fake_ready": true
+      },
+      "passed": true
+    },
+    {
+      "name": "transition_overrun",
+      "checks": {
+        "correct_status": true,
+        "no_silent_rewrite": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

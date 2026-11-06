@@ -14,6 +14,19 @@ test_punctuation_query_cannot_match_entire_library (test_edges.EdgeTests) ... ok
 test_remote_http_rejected (test_edges.EdgeTests) ... ok
 test_schema_exposes_choices_not_script_values (test_edges.EdgeTests) ... ok
 test_style_rate_changes_estimate (test_edges.EdgeTests) ... ok
+test_budget_stop_is_persisted_in_trace (test_hardening.HardeningTests) ... ok
+test_duration_bound_checks_all_facts_and_does_not_claim_feasibility (test_hardening.HardeningTests) ... ok
+test_english_word_boundary_is_factual (test_hardening.HardeningTests) ... ok
+test_exact_claim_with_ending_punctuation_still_allowed (test_hardening.HardeningTests) ... ok
+test_fractional_duration_not_rounded_into_valid_input (test_hardening.HardeningTests) ... ok
+test_internal_punctuation_changes_clause_meaning (test_hardening.HardeningTests) ... ok
+test_model_failure_is_in_durable_trace (test_hardening.HardeningTests) ... ok
+test_model_receives_measured_voice_floor_for_impossible_duration (test_hardening.HardeningTests) ... ok
+test_multi_source_wrong_fact_id_cannot_borrow_text (test_hardening.HardeningTests) ... ok
+test_old_policy_ready_cache_requires_recheck (test_hardening.HardeningTests) ... ok
+test_question_cannot_become_assertion (test_hardening.HardeningTests) ... ok
+test_superscript_unit_cannot_be_flattened (test_hardening.HardeningTests) ... ok
+test_two_threads_only_one_can_mutate_request (test_hardening.HardeningTests) ... ok
 test_actual_38_to_28_revision_and_recheck (test_script.ScriptTests) ... ok
 test_all_required_fields_missing_individually (test_script.ScriptTests) ... ok
 test_blank_required_fields (test_script.ScriptTests) ... ok
@@ -63,6 +76,6 @@ test_restart_reuses_saved_result (test_web.WebTests) ... ok
 test_valid_edit_uses_fresh_request (test_web.WebTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 63 tests in 12.714s
+Ran 76 tests in 19.799s
 
 OK

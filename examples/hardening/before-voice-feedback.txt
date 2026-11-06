@@ -1,0 +1,14 @@
+test_model_receives_measured_voice_floor_for_impossible_duration (tests.test_hardening.HardeningTests) ... ERROR
+
+======================================================================
+ERROR: test_model_receives_measured_voice_floor_for_impossible_duration (tests.test_hardening.HardeningTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\tests\test_hardening.py", line 97, in test_model_receives_measured_voice_floor_for_impossible_duration
+    self.assertEqual(actual['scenes'][0]['voice_seconds'],1.5)
+KeyError: 'scenes'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.755s
+
+FAILED (errors=1)

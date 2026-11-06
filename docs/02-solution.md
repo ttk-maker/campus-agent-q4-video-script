@@ -23,3 +23,6 @@ SQLite 持久化原请求、素材版本、检索状态、脚本修订、检查�
 POST /api/jobs 提交 request/catalog/mode/max_steps，后台运行、GET /api/jobs/{id} 轮询。POST /api/review 接收已有 job_id 与用户 script，复制原输入/资料、建立新请求后运行确定性的 ReviewModel（mode=review）。它只调用业务检查，不做改写；随后用户显式继续才调用原先选择的生成模式。相同请求修改主题、目标或资料拒绝，网页编辑复查自动新 ID。
 
 服务仅绑定127.0.0.1，校验Host、Origin、会话令牌和256KB体积；限制100条内存任务。业务状态、修订和实际尝试在SQLite；运行Trace可下载。单机示例服务没有生产账户认证。
+
+
+困难时长守卫：estimate_duration同样按语速计算整个目录的最短完整事实旁白下限；该下限仍超目标时，提供proven_impossible证据，双检查后只允许结束，模型输出无法满足及依据。下限不超目标只表示未证明无解，不能当成存在可行稿。详见本轮追加测试报告。

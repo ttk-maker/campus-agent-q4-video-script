@@ -28,8 +28,14 @@ def main():
     browser=read("examples/browser-real/job.json");checks["real_browser"]=valid(browser["result"],browser["payload"]) and read("examples/browser-real/report.json")["passed"]
     for name,file in (("mock","acceptance.json"),("tests","report.json"),("browser","report.json")):
         checks[name]=read("examples/"+name+"/"+file)["passed"]
+    for name in ('review','browser','real-duration-final'):
+        checks['hardening_'+name]=read('examples/hardening/'+name+'/report.json')['passed']
+    fixed=read('examples/hardening/real/english_boundary/run.json')
+    checks['hardening_word_boundary_repair']=valid(fixed['output'],read('examples/hardening/real/english_boundary/input.json')) and any(t['action']['tool']=='check_rules' and t['observation'].get('passed') is False for t in fixed['trace'])
+    impossible=read('examples/hardening/real-duration-final/impossible_duration/run.json')['output']
+    checks['hardening_impossible_not_ready']=impossible['status']=='cannot_satisfy' and impossible['script_status']=='unverified' and impossible['duration_check']['catalog_bound']['proven_impossible']
     report={"verified_at":datetime.now(timezone.utc).isoformat(),"passed":all(checks.values()),"checks":checks,
-            "duration_observations":times,"note":"Initial invalid-action run, interrupted schema diagnostic and initial empty-search failure remain unchanged; empty search uses explicit retest evidence."}
+            "historical_hardening_failures":["examples/hardening/before.txt","examples/hardening/before-voice-feedback.txt","examples/hardening/real/impossible_duration","examples/hardening/real-duration-retest"],"duration_observations":times,"note":"Initial invalid-action run, interrupted schema diagnostic and initial empty-search failure remain unchanged; empty search uses explicit retest evidence."}
     (ROOT/"examples/acceptance.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2));return 0 if report["passed"] else 1
 if __name__=="__main__":raise SystemExit(main())

@@ -6,6 +6,8 @@ Python 3.10+ 标准库、SQLite、本地 Ollama Qwen，提供 CLI 和本地 Web 
 
 ## 评审入口
 
+- [本轮边缘与困难场景修复](docs/09-hardening-round.md)：修复前失败、原因、修复后回归与真实模型补测。
+
 - [需求与事实边界](docs/01-requirements.md)、[调用流程和技术取舍](docs/02-solution.md)。
 - [实际评估与失败记录](docs/03-evaluation.md)、[AI 辅助范围](docs/04-ai-usage.md)、[复盘](docs/05-retrospective.md)。
 - [可导入 Figma 的 SVG](docs/prototypes/script-flow.svg)、[痛点强化](docs/06-prototype-and-hardening.md)。
@@ -61,7 +63,7 @@ CPU 模型可能需要数分钟。每次 HTTP 最多90秒，默认每任务16个
 
 ## 事实与时长如何验收
 
-每个分镜包含 `source_id`、`fact_id`、`voiceover`、`visual`、`seconds`。旁白需与已检索事实原文一致（允许空白与非数字附近的普通句末标点差异）；字幕直接采用同一旁白。标题/画面说明也需符合品牌许可短语，所有可见文案检查禁用词。仅填一个正确 ID 不会放行额外产品结论。
+每个分镜包含 `source_id`、`fact_id`、`voiceover`、`visual`、`seconds`。旁白需与已检索事实原文一致（仅忽略汉字之间空白及有限句末陈述/感叹标点；保留英文词边界、句内标点、问号和单位上标）；字幕直接采用同一旁白。标题/画面说明也需符合品牌许可短语，所有可见文案检查禁用词。仅填一个正确 ID 不会放行额外产品结论。
 
 例如 P01/F01 只有“支持字幕。”，则“支持字幕，效率提升80%”会被标记 `unsupported_claim`。这是保守的事实原文组合方式，牺牲自由改写和创意丰富度来避免无法可靠核验的语义推断。素材本身是合成数据，系统不证明现实产品事实。
 

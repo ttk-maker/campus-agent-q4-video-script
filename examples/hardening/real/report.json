@@ -1,0 +1,23 @@
+{
+  "mode": "real",
+  "cases": [
+    {
+      "name": "english_boundary",
+      "checks": {
+        "correct_status": true,
+        "observed_risk": true,
+        "fixed_claim": true
+      },
+      "passed": true
+    },
+    {
+      "name": "impossible_duration",
+      "checks": {
+        "correct_status": false,
+        "no_fake_ready": true
+      },
+      "passed": false
+    }
+  ],
+  "passed": false
+}
