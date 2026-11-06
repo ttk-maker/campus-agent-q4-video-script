@@ -19,6 +19,10 @@ After retrieval: if script exists, check it before editing. Otherwise compose 1-
 EXACT fact text and source/fact IDs. Use approved titles/visuals from brand_rules. Never invent benefits.
 For each revision run estimate_duration AND check_rules. These tools take EMPTY arguments {}.
 If duration fails, reduce holds or remove scenes, submit_script, then repeat BOTH checks.
+The duration check includes scenes[].voice_seconds: the tool-measured minimum speech time.
+Reducing a hold below voice_seconds cannot shorten that scene. Do not repeat this ineffective edit.
+If even one cited fact's voice_seconds exceeds the target and no retrieved shorter fact fits,
+finish cannot_satisfy. You cannot remove words from a fact or invent a faster speaking rate.
 Example: 14+12+12=38 seconds exceeds 30; holds 10+9+9=28 may fit, but must call estimate_duration.
 If rules fail, use cited source text to repair, submit_script, then recheck.
 If a tool fails, retry once or finish failed. If no valid solution after checks, finish cannot_satisfy.
@@ -39,7 +43,7 @@ class HTTPModel(HTTPTransport):
             if any(e["status"]=="failed" for e in state["recent_events"]):allowed.append("finish")
         else:allowed=["submit_script","finish"]
         state["available_actions"]=allowed
-        state["duration_check"]={k:v for k,v in state["duration_check"].items() if k in ("passed","total_seconds","target_seconds","over_seconds","revision")} if state["duration_check"] else None
+        state["duration_check"]={k:v for k,v in state["duration_check"].items() if k in ("passed","total_seconds","target_seconds","over_seconds","revision","scenes")} if state["duration_check"] else None
         state["rules_check"]={k:v for k,v in state["rules_check"].items() if k in ("passed","risks","revision")} if state["rules_check"] else None
         observation=context.get("last_observation")
         if observation:context["last_observation"]={k:v for k,v in observation.items() if k not in ("scenes","materials","key","formula")}

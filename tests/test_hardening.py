@@ -83,3 +83,16 @@ class HardeningTests(unittest.TestCase):
 
     def test_exact_claim_with_ending_punctuation_still_allowed(self):
         self.assertTrue(self.check_claim('支持字幕。','支持 字幕！')['passed'])
+
+    def test_model_receives_measured_voice_floor_for_impossible_duration(self):
+        from src.models import HTTPModel
+        from src.transport import HTTPTransport
+        self.payload['request']['target_seconds']=1
+        self.run_agent()
+        snapshot=self.engine().view()
+        model=HTTPModel.__new__(HTTPModel)
+        with patch.object(HTTPTransport,'decide',return_value=base.action('finish',outcome='cannot_satisfy')) as decide:
+            model.decide({'snapshot':snapshot})
+        actual=decide.call_args.args[0]['snapshot']['duration_check']
+        self.assertEqual(actual['scenes'][0]['voice_seconds'],1.5)
+        self.assertGreater(actual['scenes'][0]['voice_seconds'],actual['target_seconds'])
