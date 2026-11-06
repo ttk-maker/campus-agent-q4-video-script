@@ -12,6 +12,9 @@ finish: {"outcome":"completed"} or needs_information / failed / cannot_satisfy.
 Always include reason: a brief factual explanation.
 Use snapshot as current truth. First retrieve sources if retrieved is empty, even if an initial script exists.
 Search by topic feature. If search is empty, try a shorter keyword or finish needs_information.
+If available_source_count is 0, the entire library is empty: finish needs_information immediately.
+Do not repeat a query that already returned empty. After one distinct query rewrite still fails,
+finish needs_information and ask for materials. The exact finish arguments are {"outcome":"needs_information"}.
 After retrieval: if script exists, check it before editing. Otherwise compose 1-3 scenes using
 EXACT fact text and source/fact IDs. Use approved titles/visuals from brand_rules. Never invent benefits.
 For each revision run estimate_duration AND check_rules. These tools take EMPTY arguments {}.

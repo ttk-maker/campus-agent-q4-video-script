@@ -98,7 +98,9 @@ class Engine:
             s["rules_check"]=s["duration_check"]=None
             s["searches"].append({"query":args["query"],"count":len(found)})
             result={"status":"found" if found else "empty","count":len(found),"materials":found,
-                    "hint":"Try a narrower product feature query or finish needs_information; never invent sources." if not found else None}
+                    "available_source_count":len(s["catalog"]["materials"]),
+                    "hint":("The entire source library is empty. Rewriting cannot find any facts. Request additional materials: finish with outcome needs_information."
+                            if not s["catalog"]["materials"] else "Try a different shorter product feature query or finish needs_information; never invent sources.") if not found else None}
         elif tool=="estimate_duration":
             result={"status":"checked",**estimate(s["script"],s["request"],s["catalog"]["rules"]),"revision":s["revision"],"key":self.check_key(s)}
             s["duration_check"]=result
