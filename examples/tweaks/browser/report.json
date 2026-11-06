@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-11-06T15:54:24.945Z",
+  "checks": [
+    {
+      "name": "bootstrap available",
+      "passed": true
+    },
+    {
+      "name": "normal complete",
+      "passed": true
+    },
+    {
+      "name": "duration actual28",
+      "passed": true
+    },
+    {
+      "name": "source and fact displayed",
+      "passed": true
+    },
+    {
+      "name": "repeat zero model steps",
+      "passed": true
+    },
+    {
+      "name": "download includes true checks",
+      "passed": true
+    },
+    {
+      "name": "38 reduced and rechecked",
+      "passed": true
+    },
+    {
+      "name": "reload restores original scenario",
+      "passed": true
+    },
+    {
+      "name": "unsubmitted edit clearly marked",
+      "passed": true
+    },
+    {
+      "name": "manual review not claimed as model",
+      "passed": true
+    },
+    {
+      "name": "unsupported edited claim rejected",
+      "passed": true
+    },
+    {
+      "name": "user text not silently repaired",
+      "passed": true
+    },
+    {
+      "name": "agent repairs then rechecks",
+      "passed": true
+    },
+    {
+      "name": "edited duration invalidates ready",
+      "passed": true
+    },
+    {
+      "name": "missing key inputs",
+      "passed": true
+    },
+    {
+      "name": "empty search no invented script",
+      "passed": true
+    },
+    {
+      "name": "tool failure visible",
+      "passed": true
+    },
+    {
+      "name": "tool failure resume",
+      "passed": true
+    },
+    {
+      "name": "impossible limit not success",
+      "passed": true
+    },
+    {
+      "name": "query rewrite affects tools",
+      "passed": true
+    },
+    {
+      "name": "untrusted title rendered safely",
+      "passed": true
+    },
+    {
+      "name": "invalid edit JSON actionable",
+      "passed": true
+    },
+    {
+      "name": "mobile width fits",
+      "passed": true
+    },
+    {
+      "name": "manual available",
+      "passed": true
+    },
+    {
+      "name": "no browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
