@@ -25,10 +25,22 @@ class HTTPModel(HTTPTransport):
     def __init__(self):super().__init__(PROMPT)
     def decide(self,context):
         context=deepcopy(context)
-        # Full per-scene checks remain on disk; only compact current facts go to model.
-        for key in ("duration_check","rules_check"):
-            check=context["snapshot"].get(key)
-            if check:check.pop("key",None);check.pop("formula",None)
+        state=context["snapshot"]
+        # Expose only actions meaningful at the current workflow stage. The model still
+        # chooses queries, scene content/pacing, revision strategy and whether to stop.
+        if state["ready"]:allowed=["finish"]
+        elif not state["retrieved"]:allowed=["search_materials"]+(["finish"] if state["searches"] or any(e["status"]=="failed" for e in state["recent_events"]) else [])
+        elif not state["script"]:allowed=["submit_script","search_materials"]
+        elif not state["duration_check"] or not state["rules_check"]:
+            allowed=[tool for tool,key in [("estimate_duration","duration_check"),("check_rules","rules_check")] if not state[key]]
+            if any(e["status"]=="failed" for e in state["recent_events"]):allowed.append("finish")
+        else:allowed=["submit_script","finish"]
+        state["available_actions"]=allowed
+        state["duration_check"]={k:v for k,v in state["duration_check"].items() if k in ("passed","total_seconds","target_seconds","over_seconds","revision")} if state["duration_check"] else None
+        state["rules_check"]={k:v for k,v in state["rules_check"].items() if k in ("passed","risks","revision")} if state["rules_check"] else None
+        observation=context.get("last_observation")
+        if observation:context["last_observation"]={k:v for k,v in observation.items() if k not in ("scenes","materials","key","formula")}
+        self.allowed_tools=allowed
         return super().decide(context)
 
 class MockModel:

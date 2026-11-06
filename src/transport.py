@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 import os
 import urllib.error
 import urllib.parse
@@ -38,8 +39,10 @@ class HTTPTransport:
         # the planner receives authoritative status/cost facts without duplicate scripts.
         messages = [{"role":"system","content":self.prompt},
                     {"role":"user","content":json.dumps(context,ensure_ascii=False,separators=(",",":"))}]
+        schema=deepcopy(SCHEMA)
+        schema["properties"]["tool"]["enum"]=getattr(self,"allowed_tools",schema["properties"]["tool"]["enum"])
         payload = json.dumps({"model": self.name, "messages": messages, "temperature": 0, "max_tokens": 700,
-                              "response_format": {"type": "json_schema", "json_schema": {"name":"script_action", "strict":True, "schema":SCHEMA}}}).encode()
+                              "response_format": {"type": "json_schema", "json_schema": {"name":"script_action", "strict":True, "schema":schema}}}).encode()
         headers = {"Content-Type": "application/json"}
         if self.key:
             headers["Authorization"] = "Bearer " + self.key
