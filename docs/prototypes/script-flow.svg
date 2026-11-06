@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1130" viewBox="0 0 1600 1130">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8" fill="#768176"/></marker></defs>
+<rect width="1600" height="1130" fill="#f4f4ef"/>
+<text x="45" y="45" font-family="Microsoft YaHei,sans-serif" font-size="15" fill="#263e36" font-weight="600">CAMPUS AGENT / PROJECT 04</text>
+<text x="45" y="92" font-family="Microsoft YaHei,sans-serif" font-size="32" fill="#263e36" font-weight="600">短视频脚本 · 每句有来源，每次修改都复查</text>
+<text x="45" y="128" font-family="Microsoft YaHei,sans-serif" font-size="19" fill="#263e36" font-weight="400">模型组合事实与分镜；工具核对来源、品牌规则和实际估算。未通过的草稿可编辑，但不能标记就绪。</text>
+<rect x="40" y="160" width="1520" height="300" rx="14" fill="#fff" stroke="#d3ddd5"/>
+<text x="60" y="193" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">01  检索—创作—检查—修订循环</text>
+<rect x="65" y="235" width="325" height="150" rx="14" fill="#fff" stroke="#d3ddd5"/>
+<text x="85" y="268" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">输入与检索</text>
+<text x="85" y="300" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">主题 / 受众 / 平台 / 风格 / 秒数</text>
+<text x="85" y="327" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">空结果：改写查询或请求补充</text>
+<rect x="435" y="235" width="325" height="150" rx="14" fill="#ecebfa" stroke="#d3ddd5"/>
+<text x="455" y="268" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">模型提交脚本</text>
+<text x="455" y="300" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">标题 / 分镜 / 旁白 / 来源 ID</text>
+<text x="455" y="327" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">每个镜头携带事实 ID 与停留时长</text>
+<rect x="805" y="235" width="325" height="150" rx="14" fill="#fff" stroke="#d3ddd5"/>
+<text x="825" y="268" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">双重工具检查</text>
+<text x="825" y="300" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">时长：逐镜头估算后合计</text>
+<text x="825" y="327" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">事实：逐句对照检索原文</text>
+<rect x="1175" y="235" width="325" height="150" rx="14" fill="#e7f1e7" stroke="#d3ddd5"/>
+<text x="1195" y="268" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">修订或结束</text>
+<text x="1195" y="300" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">超长 / 风险 → 模型调整</text>
+<text x="1195" y="327" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">当前版本双检查通过 → 就绪</text>
+<polyline points="390,310 435,310" fill="none" stroke="#768176" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="760,310 805,310" fill="none" stroke="#768176" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1130,310 1175,310" fill="none" stroke="#768176" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1335,385 1335,425 595,425 595,385" fill="none" stroke="#768176" stroke-width="2" marker-end="url(#a)"/>
+<text x="770" y="415" font-family="Microsoft YaHei,sans-serif" font-size="16" fill="#5e62a0" font-weight="400">观察检查结果 → 修改版本 → 重新检查</text>
+<rect x="40" y="485" width="745" height="270" rx="14" fill="#fff" stroke="#d3ddd5"/>
+<text x="60" y="518" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">02  时长修订验收 · 上限 30 秒</text>
+<rect x="65" y="555" width="200" height="100" rx="14" fill="#fff0de" stroke="#d3ddd5"/>
+<text x="85" y="588" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">初稿估算 38 秒</text>
+<text x="85" y="620" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">14 + 12 + 12</text>
+<rect x="310" y="555" width="200" height="100" rx="14" fill="#ecebfa" stroke="#d3ddd5"/>
+<text x="330" y="588" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">模型修改分镜</text>
+<text x="330" y="620" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">停留时长压缩</text>
+<rect x="555" y="555" width="205" height="100" rx="14" fill="#e7f1e7" stroke="#d3ddd5"/>
+<text x="575" y="588" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">复估 28 秒</text>
+<text x="575" y="620" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">10 + 9 + 9</text>
+<polyline points="265,605 310,605" fill="none" stroke="#768176" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="510,605 555,605" fill="none" stroke="#768176" stroke-width="2" marker-end="url(#a)"/>
+<text x="65" y="700" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#263e36" font-weight="400">修改会清除旧检查。38→28 来自工具实际运行，不使用预写结论。</text>
+<rect x="810" y="485" width="750" height="270" rx="14" fill="#fff" stroke="#d3ddd5"/>
+<text x="830" y="518" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">03  事实追溯验收 · P01 只有「支持字幕」</text>
+<rect x="835" y="555" width="325" height="100" rx="14" fill="#e7f1e7" stroke="#d3ddd5"/>
+<text x="855" y="588" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">允许：支持字幕。</text>
+<text x="855" y="620" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">P01 / F01 / 原文逐字匹配</text>
+<rect x="1185" y="555" width="350" height="100" rx="14" fill="#fde8df" stroke="#d3ddd5"/>
+<text x="1205" y="588" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">拒绝：效率提升 80%</text>
+<text x="1205" y="620" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">引用了 P01 也不能放行</text>
+<text x="835" y="700" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#263e36" font-weight="400">标题与画面说明也受规则约束；事实组合之外的改写需补充依据。</text>
+<rect x="40" y="780" width="1520" height="300" rx="14" fill="#fff" stroke="#d3ddd5"/>
+<text x="60" y="813" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">04  痛点与强化</text>
+<rect x="65" y="850" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="85" y="883" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P1 缺输入</text>
+<text x="85" y="915" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">不虚构受众、风格或时长</text>
+<rect x="435" y="850" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="455" y="883" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P2 空检索</text>
+<text x="455" y="915" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">改查询 / 请求资料 / 不编造</text>
+<rect x="805" y="850" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="825" y="883" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P3 伪引用</text>
+<text x="825" y="915" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">来源 ID + 事实 ID + 原文核对</text>
+<rect x="1175" y="850" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="1195" y="883" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P4 时长失真</text>
+<text x="1195" y="915" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">旁白语速、画面停留、转场合计</text>
+<rect x="65" y="950" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="85" y="983" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P5 旧检查复用</text>
+<text x="85" y="1015" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">版本 hash 绑定，修改立即失效</text>
+<rect x="435" y="950" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="455" y="983" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P6 工具故障</text>
+<text x="455" y="1015" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">失败不当通过，保留成果</text>
+<rect x="805" y="950" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="825" y="983" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">P7 无法收敛</text>
+<text x="825" y="1015" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">步数上限，明确未完成</text>
+<rect x="1175" y="950" width="345" height="85" rx="14" fill="#f7f9f5" stroke="#d3ddd5"/>
+<text x="1195" y="983" font-family="Microsoft YaHei,sans-serif" font-size="21" fill="#263e36" font-weight="600">验证边界</text>
+<text x="1195" y="1015" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#5e7367" font-weight="400">抽取式脚本，启发式时间估算</text>
+<text x="45" y="1110" font-family="Microsoft YaHei,sans-serif" font-size="15" fill="#263e36" font-weight="400">SVG 可导入 Figma · 原型标注 · 合成产品资料 / 本地真实模型 / 离线 Mock 分别留档</text>
+</svg>
