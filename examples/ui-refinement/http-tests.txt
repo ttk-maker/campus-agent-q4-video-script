@@ -1,0 +1,17 @@
+test_bad_json_and_unknown_fields (test_web.WebTests) ... ok
+test_changed_input_rejects_reuse (test_web.WebTests) ... ok
+test_cross_origin_token_and_host (test_web.WebTests) ... ok
+test_edit_duration_rechecked_then_agent_repairs (test_web.WebTests) ... ok
+test_edit_preserves_unsupported_text_and_fails (test_web.WebTests) ... ok
+test_malformed_edit (test_web.WebTests) ... ok
+test_missing_job_and_api_prefix (test_web.WebTests) ... ok
+test_no_materials_and_missing (test_web.WebTests) ... ok
+test_normal_and_repeat (test_web.WebTests) ... ok
+test_pages_health_and_manual (test_web.WebTests) ... ok
+test_restart_reuses_saved_result (test_web.WebTests) ... ok
+test_valid_edit_uses_fresh_request (test_web.WebTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 9.010s
+
+OK

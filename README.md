@@ -113,3 +113,8 @@ npm run test:browser
 ## 已知限制
 
 事实组合范围有限，单条事实可能生成较简单或重复的分镜；受众只作为模型输入，未做独立创意质量评分。估算语速不等于真实音频，英文按字符计偏保守。模型可能反复参数错误、停止或达到上限；完整失败与修复在评估文档保留。不是多租户服务，没有公网部署、真实视频生产或发布。
+
+
+## 前端优化与复用 Skill
+
+[四向优化记录](docs/10-ui-refinement.md) · [frontend-four-pass Skill](docs/skills/frontend-four-pass/SKILL.md) · [展示检查](examples/ui-refinement/presentation/report.json)。本轮只调整展示与信息层级，后端及模型逻辑保持不变。
