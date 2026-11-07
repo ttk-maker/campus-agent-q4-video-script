@@ -1,0 +1,32 @@
+{
+  "verified_at": "2026-11-07T07:30:36.412802+00:00",
+  "passed": true,
+  "checks": {
+    "real_generated_normal": true,
+    "real_duration_revision": true,
+    "real_tool_failure_recovery": true,
+    "real_unsupported_claim_repaired": true,
+    "real_empty_library_requests_materials": true,
+    "real_repeat": true,
+    "real_browser": true,
+    "mock": true,
+    "tests": true,
+    "browser": true,
+    "hardening_review": true,
+    "hardening_browser": true,
+    "hardening_real-duration-final": true,
+    "hardening_word_boundary_repair": true,
+    "hardening_impossible_not_ready": true
+  },
+  "historical_hardening_failures": [
+    "examples/hardening/before.txt",
+    "examples/hardening/before-voice-feedback.txt",
+    "examples/hardening/real/impossible_duration",
+    "examples/hardening/real-duration-retest"
+  ],
+  "duration_observations": [
+    38.0,
+    20.0
+  ],
+  "note": "Initial invalid-action run, interrupted schema diagnostic and initial empty-search failure remain unchanged; empty search uses explicit retest evidence."
+}

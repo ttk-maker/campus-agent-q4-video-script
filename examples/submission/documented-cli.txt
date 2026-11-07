@@ -1,0 +1,6 @@
+$ py -3.10 -m scripts.make_request --scenario over_duration --directory runtime/acceptance-input
+Created runtime\acceptance-input/input.json and catalog.json
+
+
+$ py -3.10 -m src.cli --mode mock --request runtime/acceptance-input/input.json --catalog runtime/acceptance-input/catalog.json --db runtime/acceptance-cli.db --output runtime/acceptance-output.json --trace runtime/acceptance-trace.jsonl
+{"status": "completed", "reason": null, "script_status": "ready", "estimated_total_seconds": 28.0, "revision": 2, "steps_used": 7}

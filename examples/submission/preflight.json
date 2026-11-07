@@ -1,0 +1,64 @@
+{
+  "project": "q4",
+  "checked_at": "2026-11-07T07:30:38.181403+00:00",
+  "baseline_commit": "1e439dae3d03dcb43cf5005094c0dbcbd52092d2",
+  "clean_archive": true,
+  "required_paths": [
+    "README.md",
+    "src",
+    "tests",
+    "examples",
+    "data",
+    "docs/01-requirements.md",
+    "docs/02-solution.md",
+    "docs/03-evaluation.md",
+    "docs/04-ai-usage.md",
+    "docs/05-retrospective.md",
+    "requirements.txt",
+    ".env.example"
+  ],
+  "tracked_runtime_or_private_files": [],
+  "credential_pattern_matches": [],
+  "credential_scan_scope": "Tracked text files; known token/private-key patterns only, not proof of all possible secrets",
+  "tests": 76,
+  "checks": [
+    {
+      "name": "python-tests",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "evidence",
+      "command": "python -m scripts.verify_evidence",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "fresh-input",
+      "command": "python -m scripts.make_request --scenario over_duration",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "cli-smoke",
+      "command": "python -m src.cli --mode mock --request runtime/request/input.json --catalog runtime/request/catalog.json --db runtime/submission-cli.db",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "cli-repeat",
+      "command": "python -m src.cli --mode mock --request runtime/request/input.json --catalog runtime/request/catalog.json --db runtime/submission-cli.db",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "real_model_rerun": false,
+  "note": "Stored real evidence checked without model calls. Runs use extracted git archive and isolated databases. Historical repository evidence not overwritten."
+}

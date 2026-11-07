@@ -1,5 +1,10 @@
 # 题目 4：短视频脚本 Agent
 
+## 固定版本交付（2026-11-07）
+
+[设计说明](docs/submission/01-design.md) · [提交与考官验收指南](docs/submission/02-delivery-and-acceptance.md) · [干净源码包检查](examples/submission/preflight.json)。固定标签 `q4-submission-20261107`；公开仓库和本机Ollama均无需评审密钥。完整提交SHA以该标签指向commit为准。
+
+
 从检索到的产品事实生成可编辑分镜，检查时长与品牌规则，依据真实检查结果修订后复查。真实模型选择动作，工具核验事实；离线 Mock 单独标记。
 
 Python 3.10+ 标准库、SQLite、本地 Ollama Qwen，提供 CLI 和本地 Web 工作台。没有真实视频制作或发布。
